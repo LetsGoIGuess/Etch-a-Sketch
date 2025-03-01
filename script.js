@@ -1,5 +1,7 @@
 function makeGrid(numba){
 
+    console.log("grid created")
+
     for(let row = 0; row < numba; row++){
 
         for(col = 0; col < numba; col++){
@@ -21,29 +23,68 @@ function makeGrid(numba){
             
         }
     }
+
+
+    changeColor();
+
+
 }
 
 
-makeGrid(16);
+
+
+function changeColor(){
+    let boxOver = document.querySelectorAll(".div-box");
+
+    for(let mouse of boxOver){
+        mouse.addEventListener('mouseover',function(){
+            mouse.style.backgroundColor = "black";
+            mouse.style.outlineColor = "white";
+        })
+    }
+}
 
 
 
-let d = document.querySelectorAll(".div-box");
 
 
-for(let dem of d){
-    dem.addEventListener('mouseover',function(){
-        dem.style.backgroundColor = "black";
+function removeGrid(){
 
-        dem.style.outlineColor = "white";
+    let b = document.querySelectorAll(".div-box");
+
+
+    for(let mouse of b){
+        mouse.style.display = "none";
+    }
+}
+
+
+
+
+
+
+function play(){
+
+    let changeSize = document.querySelector("button");
+
+    changeSize.addEventListener('click',function(){
+        let size = prompt("What size would you like the grid to be? | RANGES ONLY 1 AND 100 ACCEPTED!");
+    
+        if(size < 1 || size > 100){
+            alert("Invalid Input! Try Again");
+        }
+    
+        else{
+            removeGrid();
+            makeGrid(size);
+            console.log(size);
+        }
     })
 }
 
 
 
-
-
-
-
+makeGrid(16);
+play();
 
 
