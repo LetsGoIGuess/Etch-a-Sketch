@@ -24,17 +24,12 @@ function makeGrid(numba){
         }
     }
 
-
     changeColor();
-
-
 }
-
-
-
 
 function changeColor(){
     let boxOver = document.querySelectorAll(".div-box");
+    
 
     for(let mouse of boxOver){
         mouse.addEventListener('mouseover',function(){
@@ -43,9 +38,6 @@ function changeColor(){
         })
     }
 }
-
-
-
 
 
 function removeGrid(){
@@ -57,10 +49,6 @@ function removeGrid(){
         mouse.style.display = "none";
     }
 }
-
-
-
-
 
 
 function play(){
@@ -83,8 +71,5 @@ function play(){
 }
 
 
-
 makeGrid(16);
 play();
-
-
